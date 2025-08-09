@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="icon" href="">
+    <style>
+        .wrapper{
+            border: 1px red solid;
+            background-color: #ddd;
+            width: 400px;
+            margin: 20px;
+        }
+        .transition{
+            transition: 1.5s;
+        }
+        .menu{
+            display: inline-block;
+            position: relative;
+            padding: 0 0 0 3px;
+        }
+        .menu.active{
+            background-color: #fff;
+        }
+        .menu ul{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100px;
+            opacity: 0;
+        }
+        .menu.active ul{
+            opacity: 1;
+        }
+        ul li{
+            list-style: none;
+        }
+        .menu>ul>li>a:hover{
+            background-color: lightcoral;
+        }
+
+
+        .bar{
+            
+            width: 36px;
+            height: 6px;
+            background-color: #666;
+            margin: 6px 0px;
+            border-radius: 3px;
+        }
+        .menu.active .bar1{transform: rotate(-45deg) translate(-9px, 8px);}
+        .menu.active .bar2{opacity: 0;}
+        .menu.active .bar3{transform: rotate(45deg) translate(-9px, -7px);}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script>
+        $(function () {
+            $('.menu').click(function(){
+                // $(this).addClass('active')
+                $(this).toggleClass('active')
+            })
+		})
+    </script>	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="menu transition">
+            <div class="bar bar1    "></div>
+            <div class="bar bar2 transition"></div>
+            <div class="bar bar3 transition"></div>
+            <div class="bar bar4 transition"></div>
+
+            <ul class="transition">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Do Nothing</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
